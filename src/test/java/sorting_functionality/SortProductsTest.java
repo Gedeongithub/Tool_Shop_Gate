@@ -1,11 +1,15 @@
 package sorting_functionality;
 
 import com.microsoft.playwright.*;
+import org.junit.jupiter.api.Test;
+
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SortProductsTest {
-    public static void main(String[] args) {
+
+    @Test
+    void verifySorting() {
         List<String> expectedProducts = List.of(
                 " Wood Saw ",
                 " Wood Carving Chisels ",
