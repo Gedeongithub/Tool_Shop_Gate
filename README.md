@@ -46,7 +46,6 @@ $
 
 ## Question 3:
 ```bash
-## Question 3:
 ```bash
 Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (main)
 $ git checkout -b dev
@@ -128,5 +127,82 @@ To https://github.com/Gedeongithub/Tool_Shop.git
 branch 'test' set up to track 'origin/test'.
 
 Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (test)
+$ 
+```
+### Merging Test to dev branch to get latest change to dev
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (test)
+$ git switch dev
+Switched to branch 'dev'
+Your branch is up to date with 'origin/dev'.
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git merge test
+Updating 96d3f0e..4ad1a01
+Fast-forward
+ README.md | 75 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 75 insertions(+)
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git status
+On branch dev
+Your branch is ahead of 'origin/dev' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ 
+```
+
+## Question 5
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git branch -d test
+warning: not deleting branch 'test' that is not yet merged to
+         'refs/remotes/origin/test', even though it is merged to HEAD
+error: the branch 'test' is not fully merged
+hint: If you are sure you want to delete it, run 'git branch -D test'
+hint: Disable this message with "git config set advice.forceDeleteBranch false"
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git branch --merged
+* dev
+  main
+  test
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git branch
+* dev
+  main
+  test
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git branch -D test
+Deleted branch test (was 4ad1a01).
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git push origin dev
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 620 bytes | 620.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Gedeongithub/Tool_Shop.git
+   96d3f0e..4ad1a01  dev -> dev
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git push origin --delete test
+To https://github.com/Gedeongithub/Tool_Shop.git
+ - [deleted]         test
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git branch
+* dev
+  main
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
 $ 
 ```
