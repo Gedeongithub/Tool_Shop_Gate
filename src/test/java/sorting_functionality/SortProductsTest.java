@@ -12,15 +12,15 @@ public class SortProductsTest {
     @Test
     void verifySorting() {
         List<String> expectedProducts = List.of(
-                " Wood Saw ",
-                " Wood Carving Chisels ",
-                " Washers ",
-                " Tool Cabinet ",
-                " Thor Hammer ",
-                " Tape Measure 7.5m ",
-                " Tape Measure 5m ",
-                " Swiss Woodcarving Chisels ",
-                " Super-thin Protection Gloves "
+                "Wood Saw",
+                "Wood Carving Chisels",
+                "Washers",
+                "Tool Cabinet",
+                "Thor Hammer",
+                "Tape Measure 7.5m",
+                "Tape Measure 5m",
+                "Swiss Woodcarving Chisels",
+                "Super-thin Protection Gloves"
         );
 
         try (Playwright playwright = Playwright.create()) {
@@ -32,11 +32,12 @@ public class SortProductsTest {
             Page page = context.newPage();
 
             page.navigate("https://practicesoftwaretesting.com/");
-            page.waitForLoadState(LoadState.NETWORKIDLE);
 
-            Locator sortDropdown = page.locator("[data-test='sort']");
-            sortDropdown.waitFor();
-            sortDropdown.selectOption("name,desc");
+            page.waitForSelector("[data-test='product-name']");
+
+            page.locator("[data-test='sort']").selectOption("name,desc");
+
+            page.waitForTimeout(2000);
 
 //            page.navigate("https://practicesoftwaretesting.com/");
 //
@@ -46,7 +47,10 @@ public class SortProductsTest {
             page.locator("(//h5[normalize-space()='Tool Cabinet'])[1]").textContent();
             // Get all product names
             List<String> actualProducts = page.locator("[data-test='product-name']")
-                    .allTextContents();
+                    .allTextContents()
+                    .stream()
+                    .map(String::trim)
+                    .toList();
 
             // now let's print to verify
             actualProducts.forEach(System.out::println);
