@@ -250,3 +250,101 @@ $ git commit -m"feat: add basic Test class with simple name validation logic"
 
 Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
 ```
+## Question 7:
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git status
+On branch ft/setup
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/test/java/Test.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git stash
+Saved working directory and index state WIP on ft/setup: d01ecb1 Add the command history of question 5
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ 
+```
+
+## Question 8:
+
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git stash list
+stash@{0}: WIP on ft/setup: d01ecb1 Add the command history of question 5
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git stash apply stash{0}
+error: stash{0} is not a valid reference
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git stash apply stash@{0}
+On branch ft/setup
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   src/test/java/Test.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ 
+```
+## Question 9:
+
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git status
+On branch ft/setup
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   src/test/java/Test.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git add .
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git commit -m"feat:add else logic to Test class"
+[ft/setup 769c85d] feat:add else logic to Test class
+ 2 files changed, 50 insertions(+)
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git push
+fatal: The current branch ft/setup has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/setup
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git push --set-upstream origin ft/setup
+Enumerating objects: 31, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (18/18), done.
+Writing objects: 100% (27/27), 3.48 KiB | 508.00 KiB/s, done.
+Total 27 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (6/6), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/setup' on GitHub by visiting:
+remote:      https://github.com/Gedeongithub/Tool_Shop/pull/new/ft/setup
+remote: 
+To https://github.com/Gedeongithub/Tool_Shop.git
+ * [new branch]      ft/setup -> ft/setup
+branch 'ft/setup' set up to track 'origin/ft/setup'.
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ 
+```

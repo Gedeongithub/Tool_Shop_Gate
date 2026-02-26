@@ -7,6 +7,6 @@ public class Test{
             System.out.println("The name is incorrect");
         }
 
-        System.out.println("Hello everyone");
+        System.out.println("Hello everybody");
     }
 }
