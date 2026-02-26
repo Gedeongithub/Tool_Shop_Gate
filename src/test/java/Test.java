@@ -7,6 +7,11 @@ public class Test{
             System.out.println("The name is incorrect");
         }
 
-        System.out.println("Hello everybody, I have something I wanna talk about");
+        String place = "Kigali";
+        String placeName = "Kigali";
+
+        if (place.equals(placeName)){
+            System.out.println("Yeah it is true");
+        }
     }
 }
