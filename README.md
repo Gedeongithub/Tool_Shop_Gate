@@ -46,5 +46,57 @@ $
 
 ## Question 3:
 ```bash
+## Question 3:
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (main)
+$ git checkout -b dev
+Switched to a new branch 'dev'
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git commit -m"created dev branch"
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
 
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git add .
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git commit -m"created dev branch"
+[dev 96d3f0e] created dev branch
+ 1 file changed, 15 insertions(+)
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git push
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git push --set-upstream origin dev
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (12/12), 1.90 KiB | 647.00 KiB/s, done.
+Total 12 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+remote: 
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/Gedeongithub/Tool_Shop/pull/new/dev
+remote: 
+To https://github.com/Gedeongithub/Tool_Shop.git
+ * [new branch]      dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ 
 ```
