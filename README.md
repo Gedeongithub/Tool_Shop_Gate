@@ -24,6 +24,10 @@ git remote add origin https://github.com/Gedeongithub/Tool_Shop_Gate.git
  create mode 100644 README.md
  create mode 100644 pom.xml
 
+
+```
+## Question 2:
+```bash
 Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop_Gate (main)
 $ git push -u origin main
 Enumerating objects: 9, done.
@@ -38,4 +42,9 @@ branch 'main' set up to track 'origin/main'.
 
 Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop_Gate (main)
 $ 
+```
+
+## Question 3:
+```bash
+
 ```
