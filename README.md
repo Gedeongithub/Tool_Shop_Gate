@@ -206,3 +206,47 @@ $ git branch
 Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
 $ 
 ```
+## Question 5 [ft/setup] creation
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git switch -c ft/setup
+Switched to a new branch 'ft/setup'
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+
+```
+
+## Question 6:
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ touch Test.java
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git add .
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git status
+On branch ft/setup
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   .idea/encodings.xml
+        modified:   .idea/misc.xml
+        deleted:    .idea/modules.xml
+        modified:   README.md
+        new file:   pom.xml
+        new file:   src/main/java/org/example/Main.java
+        new file:   src/test/java/Test.java
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+$ git commit -m"feat: add basic Test class with simple name validation logic"
+[ft/setup a867027] feat: add basic Test class with simple name validation logic
+ 8 files changed, 86 insertions(+), 8 deletions(-)
+ create mode 100644 .gitignore
+ create mode 100644 .idea/encodings.xml
+ delete mode 100644 .idea/modules.xml
+ create mode 100644 pom.xml
+ create mode 100644 src/main/java/org/example/Main.java
+ create mode 100644 src/test/java/Test.java
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
+```
