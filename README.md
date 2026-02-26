@@ -100,3 +100,33 @@ branch 'dev' set up to track 'origin/dev'.
 Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
 $ 
 ```
+## Question 4:
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (dev)
+$ git switch -c test
+Switched to a new branch 'test'
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (test)
+$ git commit -m"Adding question 4"
+[test 44ce301] Adding question 4
+ 1 file changed, 49 insertions(+)
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (test)
+$  git push --set-upstream origin test
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.21 KiB | 1.21 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'test' on GitHub by visiting:
+remote:      https://github.com/Gedeongithub/Tool_Shop/pull/new/test
+remote: 
+To https://github.com/Gedeongithub/Tool_Shop.git
+ * [new branch]      test -> test
+branch 'test' set up to track 'origin/test'.
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (test)
+$ 
+```
