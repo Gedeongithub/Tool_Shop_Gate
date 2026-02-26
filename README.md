@@ -348,3 +348,48 @@ branch 'ft/setup' set up to track 'origin/ft/setup'.
 Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop (ft/setup)
 $ 
 ```
+
+## Question 10:
+
+```bash
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop_Gate (ft/setup)
+$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop_Gate (main)
+$ git merge ft/setup 
+Auto-merging src/test/java/Test.java
+CONFLICT (content): Merge conflict in src/test/java/Test.java
+Automatic merge failed; fix conflicts and then commit the result.
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop_Gate (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop_Gate (main|MERGING)
+$ git commit -m"Merged ft/setup to main branch"
+[main 2b069c8] Merged ft/setup to main branch
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop_Gate (main)
+$ git push
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (13/13), 1.11 KiB | 380.00 KiB/s, done.
+Total 13 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), completed with 3 local objects.
+To https://github.com/Gedeongithub/Tool_Shop_Gate.git
+   cf66603..2b069c8  main -> main
+
+Gedeon@DESKTOP-V5U1KDO MINGW64 ~/Desktop/Tool_Shop_Gate (main)
+$ 
+```
