@@ -2,13 +2,59 @@ package sorting_functionality;
 
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.LoadState;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+import java.util.Arrays;
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SortProductsTest {
 
+    static Playwright playwright;
+    static Browser browser;
+    BrowserContext browserContext;
+    Page page;
+    static final String Url = "https://practicesoftwaretesting.com/";
+
+    @BeforeAll
+    static void browserLauncher(){
+        playwright = Playwright.create();
+        browser = playwright.chromium().launch(
+                new BrowserType.LaunchOptions()
+                        .setHeadless(false)
+                        .setArgs(Arrays.asList(
+                                "--no-sandbox",
+                                "--disable-setuid-sandbox",
+                                "--disable-dev-shm-usage",
+                                "--disable-gpu"
+                        ))
+        );
+    }
+
+    @BeforeEach
+    void createContext(){
+        browserContext = browser.newContext(
+                new Browser.NewContextOptions()
+                        .setUserAgent(
+                                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
+                                        "AppleWebKit/537.36 (KHTML, like Gecko) " +
+                                        "Chrome/120.0.0.0 Safari/537.36"
+                        )
+        );
+        page = browserContext.newPage();
+        page.setDefaultTimeout(60000);
+    }
+
+    @AfterEach
+    void closeContext() {
+        browserContext.close();
+    }
+
+    @AfterAll
+    static void closeBrowser() {
+        browser.close();
+        playwright.close();
+    }
     @Test
     void verifySorting() {
         List<String> expectedProducts = List.of(
@@ -23,26 +69,15 @@ public class SortProductsTest {
                 "Super-thin Protection Gloves"
         );
 
-        try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(
-                    new BrowserType.LaunchOptions().setHeadless(true)
-            );
 
-            BrowserContext context = browser.newContext();
-            Page page = context.newPage();
-
-            page.navigate("https://practicesoftwaretesting.com/");
+            page.navigate(Url);
 
             page.waitForSelector("[data-test='product-name']");
 
             page.locator("[data-test='sort']").selectOption("name,desc");
 
-            page.waitForTimeout(2000);
+            page.waitForTimeout(20000);
 
-//            page.navigate("https://practicesoftwaretesting.com/");
-//
-//            // Choose Z-A
-//            page.locator("[data-test='sort']").selectOption("name,desc");
 //            //Attention
             page.locator("(//h5[normalize-space()='Tool Cabinet'])[1]").textContent();
             // Get all product names
@@ -59,6 +94,6 @@ public class SortProductsTest {
             assertThat(actualProducts).isEqualTo(expectedProducts);
 
 //            page.waitForTimeout(5000);
-        }
+
     }
 }
